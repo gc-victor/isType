@@ -4,9 +4,7 @@
  * Copyright (c) 2012 Víctor García (https://github.com/gc-victor)
  * Released under Unlicense (http://unlicense.org/)
  * ---------------------------------------------------------------
-//  */
-// var window = window;
-
+ */
 (function (window) {
   'use strict';
 
