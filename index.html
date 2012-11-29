@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>isType</title>
+</head>
+<body>
+  <div id="isType"></div>
+  <script src="istype.js"></script>
+  <script>
+
+    document.write($.isArray([])); // => true
+    document.write($.isArray('Hello World!')); // => false
+
+    document.write($.isBoolean(false)); // => true
+    document.write($.isBoolean('Hello World!')); // => false
+
+    document.write($.isDate(new Date())); // => true
+    document.write($.isDate('Hello World!')); // => false
+
+    document.write($.isFunction(function () {})); // => true
+    document.write($.isFunction('Hello World!')); // => false
+
+    document.write($.isNumber(0)); // => true
+    document.write($.isNumber('Hello World!')); // => false
+
+    document.write($.isObject({})); // => true
+    document.write($.isObject('Hello World!')); // => false
+
+    document.write($.isRegExp(/0/)); // => true
+    document.write($.isRegExp('Hello World!')); // => false
+
+    document.write($.isUndefined(undefined)); // => true
+    document.write($.isUndefined('Hello World!')); // => false
+
+    document.write($.isString('')); // => true
+    document.write($.isString([])); // => false
+
+  </script>
+</body>
+</html>
