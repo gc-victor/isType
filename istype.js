@@ -8,9 +8,9 @@
 (function (window) {
   'use strict';
 
-  // allows get objects class
   var arrayPrototype = Array.prototype,
     nativeForEach = arrayPrototype.forEach,
+    // allows get objects class
     toStr = Object.prototype.toString,
     a = [], re;
 
