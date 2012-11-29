@@ -9,11 +9,10 @@
   'use strict';
 
   // allows get objects class
-  var toStr = Object.prototype.toString,
-    a = [],
-    arrayPrototype = Array.prototype,
+  var arrayPrototype = Array.prototype,
     nativeForEach = arrayPrototype.forEach,
-    re;
+    toStr = Object.prototype.toString,
+    a = [], re;
 
   // forEach if lt-ie9
   if (!nativeForEach) {
