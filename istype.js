@@ -28,7 +28,7 @@
   'Array Boolean Date Function Number Object RegExp Undefined String'.split(' ').forEach(function (arr) {
     a['is' + arr] = function (o) {
       re = new RegExp(o);
-      return o.test(toStr.call(o));
+      return re.test(toStr.call(o));
     };
   });
 
