@@ -27,7 +27,7 @@
   // creating some isType methods. Example: $.isArray([]);
   'Array Boolean Date Function Number Object RegExp Undefined String'.split(' ').forEach(function (arr) {
     a['is' + arr] = function (o) {
-      re = new RegExp(o);
+      re = new RegExp(arr);
       return re.test(toStr.call(o));
     };
   });
