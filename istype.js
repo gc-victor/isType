@@ -5,33 +5,21 @@
  * Released under Unlicense (http://unlicense.org/)
  * ---------------------------------------------------------------
  */
-(function (window) {
+(function () {
   'use strict';
 
-  var arrayPrototype = Array.prototype,
-    nativeForEach = arrayPrototype.forEach,
-    // allows get objects class
-    toStr = Object.prototype.toString,
-    a = [], re;
-
-  // forEach if lt-ie9
-  if (!nativeForEach) {
-    arrayPrototype.forEach = function (fn, sc) {
-      var a = 0, d = this.length;
-      for (a; a < d; a += 1) {
-        fn.call(sc, this[a], a, this);
-      }
-    };
-  }
+  // allows get objects class
+  var ob = Object.prototype.toString,
+    ar = [];
 
   // creating some isType methods. Example: $.isArray([]);
-  'Array Boolean Date Function Number Object RegExp Undefined String'.split(' ').forEach(function (arr) {
-    a['is' + arr] = function (o) {
-      re = new RegExp(arr);
-      return re.test(toStr.call(o));
+  "Array Boolean Date Function Number Object RegExp Undefined String".split(" ").forEach(function (a) {
+    ar["is" + a] = function (b) {
+      var re = new RegExp(a);
+      return re.test(ob.call(b));
     };
   });
 
   // adding objects to $.
-  window.$ = a;
-}(window));
+  window.$ = ar;
+}());
