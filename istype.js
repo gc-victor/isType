@@ -5,7 +5,7 @@
  * Released under Unlicense (http://unlicense.org/)
  * ---------------------------------------------------------------
  */
-(function () {
+(function (wn) {
   'use strict';
 
   // allows get objects class
@@ -21,5 +21,5 @@
   });
 
   // adding objects to $.
-  window.$ = ar;
-}());
+  wn.$ = ar;
+}(window));
