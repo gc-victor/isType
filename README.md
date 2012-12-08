@@ -4,54 +4,79 @@ Some isType like isArray, isBoolean, isDate, isFunction, isNumber, isObject, isR
 
 ## Usage
 
+### isArray
+
 ```javascript
-
-/////////////////////////////////////////
-
 $.isArray([]); // => true
 $.isArray('Hello World!'); // => false
+```
 
-/////////////////////////////////////////
+### isBoolean
 
+```javascript
 $.isBoolean(false); // => true
 $.isBoolean('Hello World!'); // => false
+```
 
-/////////////////////////////////////////
+### isDate
 
+```javascript
 $.isDate(new Date()); // => true
 $.isDate('Hello World!'); // => false
+```
 
-/////////////////////////////////////////
+### isFunction
 
+```javascript
 $.isFunction(function () {}); // => true
 $.isFunction('Hello World!'); // => false
+```
 
-/////////////////////////////////////////
+### isNumber
 
+```javascript
 $.isNumber(0); // => true
 $.isNumber('Hello World!'); // => false
+```
 
-/////////////////////////////////////////
+### isObject
 
+```javascript
 $.isObject({}); // => true
 $.isObject('Hello World!'); // => false
+```
 
-/////////////////////////////////////////
+### isRegExp
 
+```javascript
 $.isRegExp(/0/); // => true
 $.isRegExp('Hello World!'); // => false
+```
 
-/////////////////////////////////////////
+### isUndefined
 
+```javascript
 $.isUndefined(undefined); // => true
 $.isUndefined('Hello World!'); // => false
+```
 
-/////////////////////////////////////////
+### isString
 
+```javascript
 $.isString(''); // => true
 $.isString([]); // => false
+```
 
-/////////////////////////////////////////
+## lt-ie9
+
+```javascript
+var arrayPrototype = Array.prototype;
+
+arrayPrototype.forEach || (arrayPrototype.forEach = function(b, c) {
+  var a = 0,
+    i = this.length;
+  for(a; a < i; a += 1) b.call(c, this[a], a, this)
+});
 ```
 
 ## Inspiration
