@@ -1,25 +1,20 @@
 /*
  * JavaScript Librery isType
- * ---------------------------------------------------------------
- * Copyright (c) 2012 Víctor García (https://github.com/gc-victor)
- * Released under Unlicense (http://unlicense.org/)
- * ---------------------------------------------------------------
+ * Copyright (c) 2012 V\u00edctor Garc\u00eda
+ * Released under Unlicense
  */
-(function (wn) {
-  'use strict';
-
-  // allows get objects class
-  var ob = Object.prototype.toString,
-    ar = [];
-
-  // creating some isType methods. Example: $.isArray([]);
-  "Array Boolean Date Function Number Object RegExp Undefined String".split(" ").forEach(function (a) {
-    ar["is" + a] = function (b) {
-      var re = new RegExp(a);
-      return re.test(ob.call(b));
+!function (r) {
+  /*
+   * Creates isType methods
+   * methods: isArray, isBoolean, isDate, isFunction, isNumber, isObject, isRegExp, isUndefined, isString
+   * returns: boolean
+   * example: $.isArray([]) // true
+   */
+  'Array Boolean Date Function Number Object RegExp Undefined String'.split(' ').forEach(function (a) {
+    r['is' + a] = function (b) {
+      return new RegExp(a).test(Object.prototype.toString.call(b));
     };
   });
 
-  // adding objects to $.
-  wn.$ = ar;
-}(window));
+  window.$ = r;
+}([]);
