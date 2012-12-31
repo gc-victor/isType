@@ -12,6 +12,7 @@
    */
   'Array Boolean Date Function Number Object RegExp Undefined String'.split(' ').forEach(function (a) {
     r['is' + a] = function (b) {
+      // b !== b fixes bug $.isNumber(NaN) // true
       return b !== b ? false : new RegExp(a).test(Object.prototype.toString.call(b));
     };
   });
