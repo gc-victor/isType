@@ -37,6 +37,7 @@ $.isFunction('Hello World!'); // => false
 ```javascript
 $.isNumber(0); // => true
 $.isNumber('Hello World!'); // => false
+$.isNumber(NaN); // => false
 ```
 
 ### isObject
