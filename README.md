@@ -32,11 +32,17 @@ $.isFunction(function () {}); // => true
 $.isFunction('Hello World!'); // => false
 ```
 
+### isNaN
+
+```javascript
+$.isNaN(NaN); // => true
+$.isNaN(0); // => false
+```
+
 ### isNumber
 
 ```javascript
 $.isNumber(0); // => true
-$.isNumber('Hello World!'); // => false
 $.isNumber(NaN); // => false
 ```
 
@@ -54,18 +60,18 @@ $.isRegExp(/0/); // => true
 $.isRegExp('Hello World!'); // => false
 ```
 
-### isUndefined
-
-```javascript
-$.isUndefined(undefined); // => true
-$.isUndefined('Hello World!'); // => false
-```
-
 ### isString
 
 ```javascript
 $.isString(''); // => true
 $.isString([]); // => false
+```
+
+### isUndefined
+
+```javascript
+$.isUndefined(undefined); // => true
+$.isUndefined('Hello World!'); // => false
 ```
 
 ## lt-ie9
