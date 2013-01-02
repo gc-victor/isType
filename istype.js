@@ -6,14 +6,13 @@
 !function (r) {
   /*
    * Creates isType methods
-   * methods: isArray, isBoolean, isDate, isFunction, isNumber, isObject, isRegExp, isUndefined, isString
+   * methods: isArray, isBoolean, isDate, isFunction, isNaN, isNumber, isObject, isRegExp, isUndefined, isString
    * returns: boolean
    * example: $.isArray([]) // true
    */
-  'Array Boolean Date Function Number Object RegExp Undefined String'.split(' ').forEach(function (a) {
+  'Array Boolean Date Function NaN Number Object RegExp String Undefined'.split(' ').forEach(function (a) {
     r['is' + a] = function (b) {
-      // b !== b fixes bug $.isNumber(NaN) // true
-      return b !== b ? false : new RegExp(a).test(Object.prototype.toString.call(b));
+      return b !== b ? a === 'NaN' ? !0 : !1 : RegExp(a).test(Object.prototype.toString.call(b));
     };
   });
 
